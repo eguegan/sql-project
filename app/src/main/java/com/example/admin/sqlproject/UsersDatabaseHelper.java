@@ -23,11 +23,19 @@ public class UsersDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        String CREATE_USERS_TABLE = "CREATE TABLE " + TABLE_USERS +
+                "(" +
+                KEY_USER_ID + " INTEGER PRIMARY KEY," +
+                KEY_USER_NAME + " TEXT," +
+                KEY_AGE + " TEXT" +
+                ")";
 
+        db.execSQL(CREATE_USERS_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
+        onCreate(db);
     }
 }

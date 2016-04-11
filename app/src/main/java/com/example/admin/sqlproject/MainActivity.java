@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String EXAMPLE_NAME = "Edwin";
+    private static final String EXAMPLE_AGE = "63";
+
+    private static final String TAG = "MainActivityTAG_";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
