@@ -9,8 +9,14 @@ import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String EXAMPLE_NAME = "Edwin";
-    private static final String EXAMPLE_AGE = "63";
+    private static final String EXAMPLE_NAME = "Etienne";
+    private static final String EXAMPLE_AGE = "83";
+
+    private static final String EXAMPLE_NAME1 = "Saulo";
+
+    private static final String EXAMPLE_NAME2 = "Benjamin";
+
+    private static final String EXAMPLE_NAME3 = "Miguel";
 
     private static final String TAG = "MainActivityTAG_";
 
@@ -31,7 +37,25 @@ public class MainActivity extends AppCompatActivity {
             values.put(UsersDatabaseHelper.KEY_AGE, EXAMPLE_AGE);
 
             db.insertOrThrow(UsersDatabaseHelper.TABLE_USERS, null, values);
-            db.setTransactionSuccessful();
+
+
+            ContentValues values1 = new ContentValues();
+            values.put(UsersDatabaseHelper.KEY_USER_NAME, EXAMPLE_NAME1);
+            values.put(UsersDatabaseHelper.KEY_AGE, EXAMPLE_AGE);
+
+            db.insertOrThrow(UsersDatabaseHelper.TABLE_USERS, null, values1);
+
+            ContentValues values2 = new ContentValues();
+            values.put(UsersDatabaseHelper.KEY_USER_NAME, EXAMPLE_NAME2);
+            values.put(UsersDatabaseHelper.KEY_AGE, EXAMPLE_AGE);
+
+            db.insertOrThrow(UsersDatabaseHelper.TABLE_USERS, null, values2);
+
+            ContentValues values3 = new ContentValues();
+            values.put(UsersDatabaseHelper.KEY_USER_NAME, EXAMPLE_NAME3);
+            values.put(UsersDatabaseHelper.KEY_AGE, EXAMPLE_AGE);
+
+            db.insertOrThrow(UsersDatabaseHelper.TABLE_USERS, null, values3);
         } catch (Exception e) {
             Log.e(TAG, "Error while trying to add post to database");
         } finally {
