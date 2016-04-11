@@ -14,4 +14,10 @@
         android:layout_height="wrap_content"
         android:text="Button"
         android:onClick="startSql"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button LOG"
+        android:onClick="logInformation"/>
 </RelativeLayout>
